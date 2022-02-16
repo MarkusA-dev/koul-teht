@@ -6,12 +6,8 @@ database = 'testdb'
 
 cnxn = pyodbc.connect('DRIVER=ODBC Driver 17 for SQL Server;SERVER='
                       +server+';DATABASE='+database+';Trusted_Connection=yes')
-print('you got here')
 cursor = cnxn.cursor()
-print('you got here')
 rows = cursor.execute("SELECT * FROM TestTable").fetchall()
-print(rows)
-
 cursor.execute("SELECT * FROM TestTable")
 row = cursor.fetchone()
 while row:
